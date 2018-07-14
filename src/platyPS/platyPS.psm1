@@ -2771,7 +2771,7 @@ function ConvertPsObjectsToMamlModel
             $inputtypes | ForEach-Object {
                 if (![string]::IsNullOrEmpty($_))
                 {
-                    $InputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlInputOutput
+                    $InputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlInput
                     $InputObject.TypeName = $_
                     $Inputs += $InputObject
                 }
@@ -2779,7 +2779,7 @@ function ConvertPsObjectsToMamlModel
         }
         else
         {
-            $InputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlInputOutput
+            $InputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlInput
             $InputObject.TypeName = $_.type.name
             $InputObject.Description = $_.description |
                 DescriptionToPara |
@@ -2805,7 +2805,7 @@ function ConvertPsObjectsToMamlModel
             $Outputtypes | ForEach-Object {
                 if (![string]::IsNullOrEmpty($_))
                 {
-                    $OutputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlInputOutput
+                    $OutputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlOutput
                     $OutputObject.TypeName = $_
                     $Outputs += $OutputObject
                 }
@@ -2813,7 +2813,7 @@ function ConvertPsObjectsToMamlModel
         }
         else
         {
-            $OutputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlInputOutput
+            $OutputObject = New-Object -TypeName Markdown.MAML.Model.MAML.MamlOutput
             $OutputObject.TypeName = $_.type.name
             $OutputObject.Description = $_.description |
                 DescriptionToPara |
